@@ -4,7 +4,7 @@ namespace Bank_ATM
 {
     public class Program
     {
-        static double balance = 5000.00;
+        public static double balance = 5000.00;
 
         static void Main(string[] args)
         {
@@ -62,10 +62,19 @@ namespace Bank_ATM
             AdditionalTransaction();
         }
 
-        static void WithdrawMoney(double approvedWithdrawAmount)
+        public static double WithdrawMoney(double approvedWithdrawAmount)
         {
-            balance = balance - approvedWithdrawAmount;
-
+            if(approvedWithdrawAmount > balance)
+            {
+                approvedWithdrawAmount = 0;
+                balance = balance - approvedWithdrawAmount;
+                return balance;
+            }
+            else
+            {
+                balance = balance - approvedWithdrawAmount;
+                return balance;
+            }   
         }
 
         static double WithdrawRequest()
@@ -78,7 +87,7 @@ namespace Bank_ATM
                 return withdrawAmount = 0;
             }
             else
-            {
+            { 
                 return withdrawAmount;
             }
         }
