@@ -39,12 +39,15 @@ namespace Bank_ATM
             {
                 case 1:
                     ViewBalance();
+                    AdditionalTransaction();
                     break;
                 case 2:
                     WithdrawMoney(WithdrawRequest());
+                    AdditionalTransaction();
                     break;
                 case 3:
                     DepositMoney();
+                    AdditionalTransaction();
                     break;
                 case 4:
                     Exit();
@@ -59,7 +62,6 @@ namespace Bank_ATM
         {
             Console.WriteLine($"The current balance is: {balance}");
 
-            AdditionalTransaction();
         }
 
         public static double WithdrawMoney(double approvedWithdrawAmount)
@@ -92,10 +94,27 @@ namespace Bank_ATM
             }
         }
 
-        static void DepositMoney()
+        public static double DepositMoney()
         {
 
         }
+
+
+        static double DepositRequest()
+        {
+            double depositAmount = ConfirmTransactionAmount("deposit");
+
+            if (depositAmount < 0)
+            {
+                Console.WriteLine("Unable to deposit a negative amount.");
+                return depositAmount = 0;
+            }
+            else
+            {
+                return depositAmount;
+            }
+        }
+
 
         static void Exit()
         {
@@ -127,10 +146,19 @@ namespace Bank_ATM
         {
             Console.WriteLine($"Please enter a dollar amount to {transcationType}");
 
-            string amount = Console.ReadLine();
-            double transactionAmount = Convert.ToDouble(amount);
+            try
+            {
+                string amount = Console.ReadLine();
+                double transactionAmount = Convert.ToDouble(amount);
+                return transactionAmount;
+            }
+            catch(FormatException fe)
+            {
+                Console.WriteLine(fe.Message);
+                throw;
+            }
 
-            return transactionAmount;
+            
         }
     }
 }
