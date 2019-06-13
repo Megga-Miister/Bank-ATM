@@ -38,10 +38,19 @@ namespace Bank_ATM
             switch (actionSelection)
             {
                 case 1:
+                    ViewBalance();
+                    break;
                 case 2:
+                    WithdrawMoney();
+                    break;
                 case 3:
+                    DepositMoney();
+                    break;
                 case 4:
+                    Exit();
+                    break;
                 default:
+                    Exit();
                     break;
             }
         }
