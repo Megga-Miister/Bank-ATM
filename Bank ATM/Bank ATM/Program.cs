@@ -94,9 +94,19 @@ namespace Bank_ATM
             }
         }
 
-        public static double DepositMoney()
+        public static double DepositMoney(double approvedDepositAmount)
         {
-
+            if (approvedDepositAmount < 0)
+            {
+                approvedDepositAmount = 0;
+                balance = balance + approvedDepositAmount;
+                return balance;
+            }
+            else
+            {
+                balance = balance + approvedDepositAmount;
+                return balance;
+            }
         }
 
 
