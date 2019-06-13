@@ -24,6 +24,9 @@ namespace Bank_ATM
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         static void UserInterface()
         {
             Console.WriteLine("Please choose from one of the following options:");
@@ -81,7 +84,7 @@ namespace Bank_ATM
 
         static double WithdrawRequest()
         {
-            double withdrawAmount = ConfirmTransactionAmount("withdrawal");
+            double withdrawAmount = ConfirmTransactionAmount("withdraw");
 
             if (withdrawAmount > balance)
             {

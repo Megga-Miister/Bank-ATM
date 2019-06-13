@@ -5,8 +5,8 @@
 This app will run the user through a mock ATM menu. 
 Users can select to view their balance, withdraw, deposit, and exit the program.
 
-### Sample Run Through
-![example image](filepath)
+### Snapshot of App in Action
+![Sample Run Through of the App](\assets\SampleRunThrough.JPG)
 
 ### Instructions
 You will be shown the main menu. 
