@@ -46,7 +46,7 @@ namespace Bank_ATM
                     AdditionalTransaction();
                     break;
                 case 3:
-                    DepositMoney();
+                    DepositMoney(DepositRequest());
                     AdditionalTransaction();
                     break;
                 case 4:
