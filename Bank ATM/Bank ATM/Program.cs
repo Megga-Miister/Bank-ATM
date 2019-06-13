@@ -41,7 +41,7 @@ namespace Bank_ATM
                     ViewBalance();
                     break;
                 case 2:
-                    WithdrawMoney();
+                    WithdrawMoney(WithdrawRequest());
                     break;
                 case 3:
                     DepositMoney();
@@ -62,10 +62,25 @@ namespace Bank_ATM
             AdditionalTransaction();
         }
 
-        static void WithdrawMoney()
+        static void WithdrawMoney(double approvedWithdrawAmount)
+        {
+            balance = balance - approvedWithdrawAmount;
+
+        }
+
+        static double WithdrawRequest()
         {
             double withdrawAmount = ConfirmTransactionAmount("withdrawal");
-            balance = balance - withdrawAmount;
+
+            if (withdrawAmount > balance)
+            {
+                Console.WriteLine("Unable to withdraw more than current balance.");
+                return withdrawAmount = 0;
+            }
+            else
+            {
+                return withdrawAmount;
+            }
         }
 
         static void DepositMoney()
@@ -102,6 +117,7 @@ namespace Bank_ATM
         static double ConfirmTransactionAmount(string transcationType)
         {
             Console.WriteLine($"Please enter a dollar amount to {transcationType}");
+
             string amount = Console.ReadLine();
             double transactionAmount = Convert.ToDouble(amount);
 
