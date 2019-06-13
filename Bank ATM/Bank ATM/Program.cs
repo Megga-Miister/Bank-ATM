@@ -64,7 +64,8 @@ namespace Bank_ATM
 
         static void WithdrawMoney()
         {
-
+            double withdrawAmount = ConfirmTransactionAmount("withdrawal");
+            balance = balance - withdrawAmount;
         }
 
         static void DepositMoney()
@@ -98,5 +99,13 @@ namespace Bank_ATM
             }
         }
 
+        static double ConfirmTransactionAmount(string transcationType)
+        {
+            Console.WriteLine($"Please enter a dollar amount to {transcationType}");
+            string amount = Console.ReadLine();
+            double transactionAmount = Convert.ToDouble(amount);
+
+            return transactionAmount;
+        }
     }
 }
