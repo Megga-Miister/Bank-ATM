@@ -25,7 +25,7 @@ namespace Bank_ATM
         }
 
         /// <summary>
-        /// 
+        /// Displays ATM options and runs action chosen by user
         /// </summary>
         static void UserInterface()
         {
@@ -61,12 +61,20 @@ namespace Bank_ATM
             }
         }
 
+        /// <summary>
+        /// Displays the current balance 
+        /// </summary>
         static void ViewBalance()
         {
             Console.WriteLine($"The current balance is: {balance}");
 
         }
 
+        /// <summary>
+        /// Withdraw transaction that deducts from the balance
+        /// </summary>
+        /// <param name="approvedWithdrawAmount"> Amount of money user wishes to withdraw that didn't hit any exceptions</param>
+        /// <returns> Updated balance </returns>
         public static double WithdrawMoney(double approvedWithdrawAmount)
         {
             if(approvedWithdrawAmount > balance)
@@ -82,6 +90,10 @@ namespace Bank_ATM
             }   
         }
 
+        /// <summary>
+        /// Used to validate user's withdraw request in order to prevent balance overdraft
+        /// </summary>
+        /// <returns> An approved withdraw amount that can be deducted from balance</returns>
         static double WithdrawRequest()
         {
             double withdrawAmount = ConfirmTransactionAmount("withdraw");
@@ -97,6 +109,11 @@ namespace Bank_ATM
             }
         }
 
+        /// <summary>
+        /// Deposit transaction that will add to the balance
+        /// </summary>
+        /// <param name="approvedDepositAmount"> Amount of money user wishes to deposit that didn't hit any exceptions</param>
+        /// <returns> Updated banlance</returns>
         public static double DepositMoney(double approvedDepositAmount)
         {
             if (approvedDepositAmount < 0)
@@ -112,7 +129,10 @@ namespace Bank_ATM
             }
         }
 
-
+        /// <summary>
+        /// Used to validate user's deposit request in order to prevent negative numbers from being added to balance
+        /// </summary>
+        /// <returns> An approved deposit amount that can be added to the balance</returns>
         static double DepositRequest()
         {
             double depositAmount = ConfirmTransactionAmount("deposit");
@@ -128,12 +148,17 @@ namespace Bank_ATM
             }
         }
 
-
+        /// <summary>
+        /// Triggers the program closing
+        /// </summary>
         static void Exit()
         {
             Environment.Exit(0);
         }
 
+        /// <summary>
+        /// Prompts user to answer if they would like to complete an addtional transaction from the main menu
+        /// </summary>
         static void AdditionalTransaction()
         {
             Console.WriteLine("Would you like to conduct another transaction? (Y/N)");
@@ -155,6 +180,11 @@ namespace Bank_ATM
             }
         }
 
+        /// <summary>
+        /// Prompts user to enter amount they would like to use in transaction
+        /// </summary>
+        /// <param name="transcationType">Withdraw or Deposit</param>
+        /// <returns>Amount user is trying to transact</returns>
         static double ConfirmTransactionAmount(string transcationType)
         {
             Console.WriteLine($"Please enter a dollar amount to {transcationType}");
