@@ -57,6 +57,7 @@ namespace Bank_ATM
 
         static void ViewBalance()
         {
+            Console.WriteLine($"The current balance is: {balance}");
 
         }
 
@@ -72,7 +73,28 @@ namespace Bank_ATM
 
         static void Exit()
         {
+            Environment.Exit(0);
+        }
 
+        static void AdditionalTransaction()
+        {
+            Console.WriteLine("Would you like to conduct another transaction? (Y/N)");
+
+            string userResponse = Console.ReadLine();
+            string userDecision = userResponse.ToUpper();
+
+            if(userDecision == "Y")
+            {
+                UserInterface();
+            }
+            else if(userDecision == "N")
+            {
+                Exit();
+            }
+            else
+            {
+                UserInterface();
+            }
         }
 
     }
