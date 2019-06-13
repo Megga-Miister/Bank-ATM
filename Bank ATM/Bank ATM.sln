@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank ATM", "Bank ATM\Bank ATM.csproj", "{9EA14007-F7D8-4542-A7B4-89D3147ED264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank ATM", "Bank ATM\Bank ATM.csproj", "{9EA14007-F7D8-4542-A7B4-89D3147ED264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank ATM Unit Test", "Bank ATM Unit Test\Bank ATM Unit Test.csproj", "{4007D824-53C0-4067-9525-6F0ED0C64398}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9EA14007-F7D8-4542-A7B4-89D3147ED264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA14007-F7D8-4542-A7B4-89D3147ED264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EA14007-F7D8-4542-A7B4-89D3147ED264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4007D824-53C0-4067-9525-6F0ED0C64398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4007D824-53C0-4067-9525-6F0ED0C64398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4007D824-53C0-4067-9525-6F0ED0C64398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4007D824-53C0-4067-9525-6F0ED0C64398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
