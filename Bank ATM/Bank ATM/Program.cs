@@ -59,6 +59,7 @@ namespace Bank_ATM
         {
             Console.WriteLine($"The current balance is: {balance}");
 
+            AdditionalTransaction();
         }
 
         static void WithdrawMoney()
